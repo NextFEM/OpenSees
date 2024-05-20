@@ -122,6 +122,7 @@
 #define MAT_TAG_Hardening			 6
 #define MAT_TAG_Hysteretic			 7
 #define MAT_TAG_HystereticSM		1969  // Silvia Mazzoni, 2022
+#define MAT_TAG_OOHysteretic 1976
 #define MAT_TAG_EPPGap				 8
 #define MAT_TAG_Viscous				 9
 #define MAT_TAG_Backbone			10
@@ -311,6 +312,7 @@
 
 // GNG material - J.Cook UCanterbury
 #define MAT_TAG_GNG 7001
+#define MAT_TAG_Ratchet 7002
 
 #define SEC_TAG_Elastic2d                        3
 #define SEC_TAG_Elastic3d                        4
