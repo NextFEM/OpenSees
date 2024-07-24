@@ -670,6 +670,9 @@ ELE_LIBS   =  $(FE)/element/Element.o \
 	$(FE)/element/absorbentBoundaries/LysmerTriangle.o \
 	$(FE)/element/absorbentBoundaries/ASDAbsorbingBoundary2D.o \
 	$(FE)/element/absorbentBoundaries/ASDAbsorbingBoundary3D.o \
+	$(FE)/element/absorbentBoundaries/FSIFluidElement2D.o \
+	$(FE)/element/absorbentBoundaries/FSIInterfaceElement2D.o \
+	$(FE)/element/absorbentBoundaries/FSIFluidBoundaryElement2D.o \
 	$(FE)/element/UWelements/EmbeddedBeamInterfaceL.o \
 	$(FE)/element/UWelements/EmbeddedBeamInterfaceP.o \
 	$(FE)/element/UWelements/EmbeddedEPBeamInterface.o \
@@ -766,6 +769,7 @@ MATERIAL_LIBS   =  $(FE)/material/Material.o \
 	$(FE)/material/uniaxial/FlagShapeMaterial.o \
 	$(FE)/material/uniaxial/Neoprene.o \
 	$(FE)/material/uniaxial/ASD_SMA_3K.o \
+	$(FE)/material/uniaxial/ASDConcrete1DMaterial.o \
 	$(FE)/material/uniaxial/Concrete01.o \
 	$(FE)/material/uniaxial/Concrete02.o \
 	$(FE)/material/uniaxial/Concrete02IS.o \
@@ -882,6 +886,9 @@ MATERIAL_LIBS   =  $(FE)/material/Material.o \
 	$(FE)/material/uniaxial/HystereticSmooth.o \
 	$(FE)/material/uniaxial/HystereticAsym.o \
 	$(FE)/material/uniaxial/SLModel.o \
+	$(FE)/material/uniaxial/APDFMD.o \
+	$(FE)/material/uniaxial/APDMD.o \
+	$(FE)/material/uniaxial/APDVFD.o \
 	$(FE)/material/uniaxial/MaterialState.o \
 	$(FE)/material/uniaxial/CoulombDamperMaterial.o \
 	$(FE)/material/uniaxial/backbone/HystereticBackbone.o \
@@ -1132,6 +1139,7 @@ SECTION_LIBS = $(FE)/material/section/SectionForceDeformation.o \
 	$(FE)/material/section/Elliptical2.o \
 	$(FE)/material/section/Isolator2spring.o \
 	$(FE)/material/section/BiaxialHysteretic.o \
+	$(FE)/material/section/ASDCoupledHinge3D.o \
 	$(FE)/material/section/LayeredShellFiberSection.o \
 	$(FE)/material/section/integration/SectionIntegration.o \
 	$(FE)/material/section/integration/RCSectionIntegration.o \
@@ -1482,6 +1490,7 @@ ANALYSIS_LIBS = $(FE)/analysis/analysis/Analysis.o \
 	$(FE)/analysis/handler/PenaltyConstraintHandler.o \
 	$(FE)/analysis/handler/LagrangeConstraintHandler.o \
 	$(FE)/analysis/handler/TransformationConstraintHandler.o \
+	$(FE)/analysis/handler/AutoConstraintHandler.o \
 	$(FE)/analysis/numberer/DOF_Numberer.o \
 	$(FE)/analysis/numberer/PlainNumberer.o \
 	$(FE)/analysis/numberer/ParallelNumberer.o \

@@ -149,7 +149,7 @@ extern void *OPS_N4BiaxialTruss(void);
 extern void *OPS_AC3D8HexWithSensitivity(void);
 extern void *OPS_ASI3D8QuadWithSensitivity(void);
 extern void *OPS_AV3D4QuadWithSensitivity(void);
-extern void *OPS_VS3D4WuadWithSensitivity(void);
+extern void *OPS_VS3D4QuadWithSensitivity(void);
 extern void *OPS_MVLEM(void);       // Kristijan Kolozvari
 extern void *OPS_SFI_MVLEM(void);   // Kristijan Kolozvari
 extern void* OPS_MVLEM_3D(void);    // Kristijan Kolozvari
@@ -180,6 +180,9 @@ extern void *OPS_TenNodeTetrahedron(void);
 extern void *OPS_LysmerTriangle(void);
 extern void *OPS_ASDAbsorbingBoundary2D(void); // Massimo Petracca (ASDEA)
 extern void *OPS_ASDAbsorbingBoundary3D(void); // Massimo Petracca (ASDEA)
+extern void *OPS_FSIFluidElement2D(void); // Massimo Petracca (ASDEA)
+extern void *OPS_FSIInterfaceElement2D(void); // Massimo Petracca (ASDEA)
+extern void *OPS_FSIFluidBoundaryElement2D(void); // Massimo Petracca (ASDEA)
 extern void *OPS_TwoNodeLink(void);
 extern void *OPS_LinearElasticSpring(void);
 extern void *OPS_Inerter(void);
@@ -1331,7 +1334,7 @@ TclModelBuilderElementCommand(ClientData clientData, Tcl_Interp *interp,
 
   else if (strcmp(argv[1], "VS3D4") == 0) {
 
-    void *theEle = OPS_VS3D4WuadWithSensitivity();
+    void *theEle = OPS_VS3D4QuadWithSensitivity();
     if (theEle != 0) 
       theElement = (Element *)theEle;
     else {
@@ -1432,6 +1435,39 @@ TclModelBuilderElementCommand(ClientData clientData, Tcl_Interp *interp,
 
   else if (strcmp(argv[1], "ASDAbsorbingBoundary3D") == 0) {
       void *theEle = OPS_ASDAbsorbingBoundary3D();
+      if (theEle != 0) {
+    theElement = (Element*)theEle;
+      } else {
+    opserr<<"tclelementcommand -- unable to create element of type : "
+    <<argv[1]<<endln;
+    return TCL_ERROR;
+      }
+  }
+
+  else if (strcmp(argv[1], "FSIFluidElement2D") == 0) {
+      void *theEle = OPS_FSIFluidElement2D();
+      if (theEle != 0) {
+    theElement = (Element*)theEle;
+      } else {
+    opserr<<"tclelementcommand -- unable to create element of type : "
+    <<argv[1]<<endln;
+    return TCL_ERROR;
+      }
+  }
+
+  else if (strcmp(argv[1], "FSIInterfaceElement2D") == 0) {
+      void *theEle = OPS_FSIInterfaceElement2D();
+      if (theEle != 0) {
+    theElement = (Element*)theEle;
+      } else {
+    opserr<<"tclelementcommand -- unable to create element of type : "
+    <<argv[1]<<endln;
+    return TCL_ERROR;
+      }
+  }
+
+  else if (strcmp(argv[1], "FSIFluidBoundaryElement2D") == 0) {
+      void *theEle = OPS_FSIFluidBoundaryElement2D();
       if (theEle != 0) {
     theElement = (Element*)theEle;
       } else {

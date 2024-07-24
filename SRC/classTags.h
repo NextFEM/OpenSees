@@ -181,6 +181,7 @@
 #define MAT_TAG_Pinching                        60
 #define MAT_TAG_HookGap 			61
 #define MAT_TAG_FRPConfinedConcrete             62
+#define MAT_TAG_FRPConfinedConcrete02 5010
 #define MAT_TAG_Steel01Thermal		        63
 #define MAT_TAG_Steel02Thermal			64
 #define MAT_TAG_Concrete02Thermal		65
@@ -253,6 +254,7 @@
 #define MAT_TAG_CoulombDamperMaterial 228
 #define MAT_TAG_FlagShapeMaterial 229
 #define MAT_TAG_CreepMaterial 230
+#define MAT_TAG_ASDConcrete1DMaterial 231
 
 #define MAT_TAG_FedeasMaterial    1000
 #define MAT_TAG_FedeasBond1       1001
@@ -308,7 +310,9 @@
 #define MAT_TAG_BoucWenInfill  6666    // Stefano Sirotti 09-Feb-2022 stefano.sirotti@unimore.it
 
 #define MAT_TAG_GMG_CyclicReinforcedConcrete    9999    // Rasool Ghorbani
-
+#define MAT_TAG_APDVFD                          711
+#define MAT_TAG_APDMD                           712
+#define MAT_TAG_APDFMD                          713
 
 // GNG material - J.Cook UCanterbury
 #define MAT_TAG_GNG 7001
@@ -356,6 +360,7 @@
 #define SEC_TAG_BiaxialHysteretic 36
 #define SEC_TAG_ElasticTube3d 37
 #define SEC_TAG_CreepSection 38
+#define SEC_TAG_ASDCoupledHinge3D 39
 
 #define SEC_TAG_MCFTFiberSection2d 7601
 
@@ -389,6 +394,7 @@
 #define ND_TAG_Damage2p3D 			24
 #define ND_TAG_Damage2ppstress 			25
 #define ND_TAG_SimplifiedJ2                     26
+#define ND_TAG_PlaneStressSimplifiedJ2                     2626
 #define ND_TAG_CapPlasticity                    27
 #define ND_TAG_PlaneStressUserMaterial          28
 #define ND_TAG_PlateFromPlaneStressMaterial     29
@@ -407,6 +413,7 @@
 #define ND_TAG_MaterialCMM                        42
 #define ND_TAG_FSAM                               43
 #define ND_TAG_PlasticDamageConcrete3d            44
+#define ND_TAG_PlasticDamageConcretePlaneStress            4444
 #define ND_TAG_PlaneStressLayeredMaterial         45
 #define ND_TAG_PlaneStressRebarMaterial           46
 #define ND_TAG_Faria1998PlaneStrain               48
@@ -875,6 +882,9 @@
 #define ELE_TAG_PML2DVISCOUS              262
 #define ELE_TAG_Inno3DPnPJoint			  263 // Cristian Miculas
 #define ELE_TAG_MEFI        			  264 // C. N. Lopez
+#define ELE_TAG_FSIFluidElement2D          265  // Massimo Petracca (ASDEA)
+#define ELE_TAG_FSIInterfaceElement2D      266  // Massimo Petracca (ASDEA)
+#define ELE_TAG_FSIFluidBoundaryElement2D  267  // Massimo Petracca (ASDEA)
 
 
 #define FRN_TAG_Coulomb            1
@@ -970,6 +980,7 @@
 #define HANDLER_TAG_PenaltyConstraintHandler    	3
 #define HANDLER_TAG_TransformationConstraintHandler    	4
 #define HANDLER_TAG_PenaltyHandlerNoHomoSPMultipliers   5
+#define HANDLER_TAG_AutoConstraintHandler    6
 
 #define NUMBERER_TAG_DOF_Numberer      	1
 #define NUMBERER_TAG_PlainNumberer 	2

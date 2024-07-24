@@ -144,7 +144,7 @@ void* OPS_AC3D8HexWithSensitivity();
 void* OPS_AV3D4QuadWithSensitivity();
 void* OPS_ASI3D8QuadWithSensitivity();
 void* OPS_ElastomericBearingBoucWenMod3d();
-void* OPS_VS3D4WuadWithSensitivity();
+void* OPS_VS3D4QuadWithSensitivity();
 void* OPS_PFEMElement2DBubble(const ID& info);
 void* OPS_PFEMElement3DBubble(const ID& info);
 //void* OPS_TaylorHood2D();
@@ -249,6 +249,9 @@ void* OPS_RockingBC();
 void* OPS_InertiaTrussElement();
 void *OPS_ASDAbsorbingBoundary2D(void);
 void *OPS_ASDAbsorbingBoundary3D(void);
+void *OPS_FSIFluidElement2D(void);
+void *OPS_FSIInterfaceElement2D(void);
+void *OPS_FSIFluidBoundaryElement2D(void);
 void* OPS_MasonPan12(void);
 void* OPS_MasonPan3D(void);
 void* OPS_BeamGT(void);
@@ -367,7 +370,17 @@ namespace {
 	if(ndm == 3)
 	    return OPS_SFI_MVLEM_3D();	
 	return 0;
-    }    
+    }
+
+    static void* OPS_E_SFI_MVLEM2d3d()
+    {
+	int ndm = OPS_GetNDM();
+	if(ndm == 2)
+	    return OPS_E_SFI();
+	if(ndm == 3)
+	    return OPS_E_SFI_MVLEM_3D();	
+	return 0;
+    }      
 
     static void* OPS_DispBeamColumn()
     {
@@ -657,7 +670,7 @@ namespace {
 	functionMap.insert(std::make_pair("PFEMElementBubble", &OPS_PFEMElementBubble));
 	functionMap.insert(std::make_pair("MINI", &OPS_PFEMElementmini));
 	//functionMap.insert(std::make_pair("TaylorHood2D", &OPS_TaylorHood2D));
-	functionMap.insert(std::make_pair("VS3D4", &OPS_VS3D4WuadWithSensitivity));
+	functionMap.insert(std::make_pair("VS3D4", &OPS_VS3D4QuadWithSensitivity));
 	functionMap.insert(std::make_pair("elastomericBearingBoucWenMod", &OPS_ElastomericBearingBoucWenMod3d));
 	functionMap.insert(std::make_pair("AV3D4", &OPS_AV3D4QuadWithSensitivity));
 	functionMap.insert(std::make_pair("AC3D8", &OPS_AC3D8HexWithSensitivity));
@@ -713,11 +726,12 @@ namespace {
 	functionMap.insert(std::make_pair("LeadRubberX", &OPS_LeadRubberX));
 	functionMap.insert(std::make_pair("ElastomericX", &OPS_ElastomericX));
 	functionMap.insert(std::make_pair("MVLEM", &OPS_MVLEM2d3d));
-	functionMap.insert(std::make_pair("SFI_MVLEM", &OPS_SFI_MVLEM2d3d));
 	functionMap.insert(std::make_pair("MVLEM_3D", &OPS_MVLEM2d3d));
+	functionMap.insert(std::make_pair("SFI_MVLEM", &OPS_SFI_MVLEM2d3d));
 	functionMap.insert(std::make_pair("SFI_MVLEM_3D", &OPS_SFI_MVLEM2d3d));
-	functionMap.insert(std::make_pair("E_SFI_MVLEM_3D", &OPS_E_SFI_MVLEM_3D));
-	functionMap.insert(std::make_pair("E_SFI", &OPS_E_SFI));  
+	functionMap.insert(std::make_pair("E_SFI", &OPS_E_SFI_MVLEM2d3d));
+	functionMap.insert(std::make_pair("E_SFI_MVLEM", &OPS_E_SFI_MVLEM2d3d));  
+	functionMap.insert(std::make_pair("E_SFI_MVLEM_3D", &OPS_E_SFI_MVLEM2d3d));
 	functionMap.insert(std::make_pair("MEFI", &OPS_MEFI));	
 	functionMap.insert(std::make_pair("MasonPan12", &OPS_MasonPan12));
 	functionMap.insert(std::make_pair("MasonPan3D", &OPS_MasonPan3D));
@@ -791,6 +805,9 @@ namespace {
 	functionMap.insert(std::make_pair("InertiaTruss", &OPS_InertiaTrussElement));
 	functionMap.insert(std::make_pair("ASDAbsorbingBoundary2D", &OPS_ASDAbsorbingBoundary2D));
 	functionMap.insert(std::make_pair("ASDAbsorbingBoundary3D", &OPS_ASDAbsorbingBoundary3D));
+	functionMap.insert(std::make_pair("FSIFluidElement2D", &OPS_FSIFluidElement2D));
+	functionMap.insert(std::make_pair("FSIInterfaceElement2D", &OPS_FSIInterfaceElement2D));
+	functionMap.insert(std::make_pair("FSIFluidBoundaryElement2D", &OPS_FSIFluidBoundaryElement2D));
 	functionMap.insert(std::make_pair("PML", &OPS_PML));
 	functionMap.insert(std::make_pair("PML2D_3", &OPS_PML2D_3));
 	functionMap.insert(std::make_pair("PML2D_5", &OPS_PML2D_5));
