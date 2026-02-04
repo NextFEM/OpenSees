@@ -208,7 +208,9 @@
     <ClCompile Include="..\..\..\SRC\analysis\integrator\AlphaOSGeneralized_TP.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\integrator\AlphaOS_TP.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\integrator\EQPath.cpp" />
+    <ClCompile Include="..\..\..\SRC\analysis\integrator\ExplicitBathe.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\integrator\ExplicitDifference.cpp" />
+    <ClCompile Include="..\..\..\SRC\analysis\integrator\ExplicitDifferenceStatic.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\integrator\GimmeMCK.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\integrator\HarmonicSteadyState.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\integrator\HHTExplicit_TP.cpp" />
@@ -326,7 +328,9 @@
     <ClInclude Include="..\..\..\SRC\analysis\integrator\AlphaOSGeneralized_TP.h" />
     <ClInclude Include="..\..\..\SRC\analysis\integrator\AlphaOS_TP.h" />
     <ClInclude Include="..\..\..\SRC\analysis\integrator\EQPath.h" />
+    <ClInclude Include="..\..\..\SRC\analysis\integrator\ExplicitBathe.h" />
     <ClInclude Include="..\..\..\SRC\analysis\integrator\ExplicitDifference.h" />
+    <ClInclude Include="..\..\..\SRC\analysis\integrator\ExplicitDifferenceStatic.h" />
     <ClInclude Include="..\..\..\SRC\analysis\integrator\GimmeMCK.h" />
     <ClInclude Include="..\..\..\SRC\analysis\integrator\HHTExplicit_TP.h" />
     <ClInclude Include="..\..\..\SRC\analysis\integrator\HHTGeneralizedExplicit_TP.h" />

@@ -392,6 +392,12 @@
     <ClCompile Include="..\..\..\SRC\analysis\analysis\SDFAnalysis.cpp">
       <Filter>analysis</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\SRC\analysis\integrator\ExplicitBathe.cpp">
+      <Filter>integrator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\analysis\integrator\ExplicitDifferenceStatic.cpp">
+      <Filter>integrator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\SRC\analysis\analysis\Analysis.h">
@@ -737,6 +743,12 @@
       <Filter>integrator</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\SRC\analysis\integrator\StagedNewmark.h">
+      <Filter>integrator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\analysis\integrator\ExplicitBathe.h">
+      <Filter>integrator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\analysis\integrator\ExplicitDifferenceStatic.h">
       <Filter>integrator</Filter>
     </ClInclude>
   </ItemGroup>
